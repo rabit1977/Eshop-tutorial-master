@@ -110,7 +110,7 @@ const DashboardHero = () => {
           </div>
           <h5 className="pt-2 pl-[36px] text-[22px] font-[500]">${availableBalance}</h5>
           <Link to="/dashboard-withdraw-money">
-            <h5 className="pt-4 pl-[2] text-[#077f9c]">Withdraw Money</h5>
+            <h5 title='Withdraw Money' className="pt-4 pl-[2] text-[#077f9c]">Withdraw Money</h5>
           </Link>
         </div>
 
@@ -125,7 +125,7 @@ const DashboardHero = () => {
           </div>
           <h5 className="pt-2 pl-[36px] text-[22px] font-[500]">{orders && orders.length}</h5>
           <Link to="/dashboard-orders">
-            <h5 className="pt-4 pl-2 text-[#077f9c]">View Orders</h5>
+            <h5 title='View Orders' className="pt-4 pl-2 text-[#077f9c]">View Orders</h5>
           </Link>
         </div>
 
@@ -137,14 +137,14 @@ const DashboardHero = () => {
               fill="#00000085"
             />
             <h3
-              className={`${styles.productTitle} !text-[18px] leading-5 !font-[400] text-[#00000085]`}
+              className={`${styles.productTitle}  !text-[18px] leading-5 !font-[400] text-[#00000085]`}
             >
               All Products
             </h3>
           </div>
           <h5 className="pt-2 pl-[36px] text-[22px] font-[500]">{products && products.length}</h5>
           <Link to="/dashboard-products">
-            <h5 className="pt-4 pl-2 text-[#077f9c]">View Products</h5>
+            <h5 title='View Products' className="pt-4 pl-2 text-[#077f9c]">View Products</h5>
           </Link>
         </div>
       </div>
