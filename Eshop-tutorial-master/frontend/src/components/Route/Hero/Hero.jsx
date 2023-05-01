@@ -5,11 +5,11 @@ import styles from "../../../styles/styles";
 const Hero = () => {
   return (
     <div
-      className={`relative min-h-[70vh] 800px:min-h-[80vh] w-full bg-no-repeat  bg-cover bg-left-bottom ${styles.noramlFlex}`}
+      className={`relative min-h-[70vh] md:min-h-[80vh] w-full bg-no-repeat  bg-cover bg-left-bottom ${styles.noramlFlex}`}
     >
-      <div className={`${styles.section} w-[90%] 800px:w-[60%]`}>
+      <div className={`${styles.section} w-9/10 md:w-3/4`}>
         <h1
-          className={`text-[35px] leading-[1.2] 800px:text-[60px] text-[#111] font-[600] capitalize`}
+          className={`text-[35px] leading-[1.2] md:text-[60px] text-[#111] font-[600] capitalize`}
         >
           HOME DECORATION
         </h1>

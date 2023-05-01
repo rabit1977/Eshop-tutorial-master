@@ -7,7 +7,12 @@ import {
   AiOutlineSearch,
   AiOutlineShoppingCart,
 } from 'react-icons/ai';
-import { IoIosArrowDown, IoIosArrowForward, IoIosHeartEmpty, IoIosMenu } from 'react-icons/io';
+import {
+  IoIosArrowDown,
+  IoIosArrowForward,
+  IoIosHeartEmpty,
+  IoIosMenu,
+} from 'react-icons/io';
 import { BiMenuAltLeft } from 'react-icons/bi';
 import { CgProfile } from 'react-icons/cg';
 import DropDown from './DropDown';
@@ -60,7 +65,7 @@ const Header = ({ activeHeading }) => {
         <div className='hidden 800px:h-[50px] 800px:my-[20px] 800px:flex items-center justify-between'>
           <div>
             <Link to='/'>
-              <img src='Images/Logo.png' alt='' className="w-44" />
+              <img src='Images/Logo.png' alt='' className='w-44' />
             </Link>
           </div>
           {/* search box */}
@@ -149,7 +154,7 @@ const Header = ({ activeHeading }) => {
                 onClick={() => setOpenWishlist(true)}
               >
                 <IoIosHeartEmpty size={30} color='rgb(255 255 255 / 83%)' />
-                <span className='absolute right-0 top-0 rounded-full bg-[#3bc177] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center'>
+                <span className='absolute rounded-full bg-red-600 w-5 h-5 flex items-center justify-center -top-1 -right-1 p-0 m-0 text-white font-mono text-sm leading-tight text-center'>
                   {wishlist && wishlist.length}
                 </span>
               </div>
@@ -160,8 +165,8 @@ const Header = ({ activeHeading }) => {
                 className='relative cursor-pointer mr-[15px]'
                 onClick={() => setOpenCart(true)}
               >
-                <FaOpencart size={30} color='rgb(255 255 255 / 83%)'/>
-                <span className='absolute right-0 top-0 rounded-full bg-[#3bc177] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center'>
+                <FaOpencart size={30} color='rgb(255 255 255 / 83%)' />
+                <span className='absolute rounded-full bg-red-600 w-5 h-5 flex items-center justify-center -top-1 -right-1 p-0 m-0 text-white font-mono text-sm leading-tight text-center'>
                   {cart && cart.length}
                 </span>
               </div>
@@ -201,29 +206,29 @@ const Header = ({ activeHeading }) => {
         className={`${
           active === true ? 'shadow-sm fixed top-0 left-0 z-10' : null
         }
-      w-full h-[60px] bg-[#fff] z-50 top-0 left-0 shadow-sm 800px:hidden`}
+      w-full bg-[#fff] p-3 border-b shadow-lg md:hidden`}
       >
         <div className='w-full flex items-center justify-between'>
           <div>
             <BiMenuAltLeft
               size={40}
-              className='ml-4'
+              className=''
               onClick={() => setOpen(true)}
             />
           </div>
           <div>
             <Link to='/'>
               <img
-                src='https://shopo.quomodothemes.website/assets/images/logo.svg'
+                src='Images/Logo.png'
                 alt=''
-                className='mt-3 cursor-pointer'
+                className=' w-36 cursor-pointer'
               />
             </Link>
           </div>
           <div>
-            <div className='relative mr-[20px]'>
+            <div className='relative mr-5'>
               <AiOutlineShoppingCart size={30} />
-              <span class='absolute right-0 top-0 rounded-full bg-[#3bc177] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px]  leading-tight text-center'>
+              <span class='absolute flex items-center justify-center -right-1 -top-1 rounded-full bg-[#5624D0] w-5 h-5 p-0 m-0 text-white font-mono text-xs  leading-tight text-center'>
                 {cart && cart.length}
               </span>
             </div>

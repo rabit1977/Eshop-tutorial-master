@@ -17,7 +17,7 @@ const Footer = () => {
   return (
     <div className='bg-[#1C1D1F] text-white'>
       <div className='md:flex md:justify-between md:items-center sm:px-12 px-4 bg-[#673DE6] py-7'>
-        <h1 className='text-3xl lg:text-5xl md:mb-0 mb-6 md:text-left text-center lg:leading-normal font-semibold md:w-2/5'>
+        <h1 className='text-3xl lg:text-5xl md:mb-0 mb-6 md:text-left text-center lg:leading-normal font-semibold'>
           Subscribe here
         </h1>
         <div className='flex sm:flex-row flex-col'>
@@ -26,7 +26,7 @@ const Footer = () => {
             required
             placeholder='Enter your email...'
             className='text-gray-700 placeholder:text-[#673DE6]
-                w-full sm:mr-5 mr-1 lg:mb-0 mb-4 sm:mb-0 py-2.5 rounded-lg pl-3 focus:outline-none'
+                lg:w-96 md:w-80 w-full sm:mr-5 mr-1 lg:mb-0 mb-4 sm:mb-0 py-2.5 rounded-lg pl-3 focus:outline-none'
           />
           <button className={`${styles.footerButton}`}>Submit</button>
         </div>
@@ -88,9 +88,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div
-        className='grid grid-cols-1 justify-items-center sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-2 text-gray-300 text-sm pb-8'
-      >
+      <div className='grid grid-cols-1 justify-items-center sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-2 text-gray-300 text-sm pb-8'>
         <span>© 2023 Learn-ReactJS. All rights reserved.</span>
         <span>Terms · Privacy Policy</span>
         <div className='sm:col-span-full lg:col-span-1 md:col-span-full '>
