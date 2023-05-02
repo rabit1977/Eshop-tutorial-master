@@ -69,17 +69,17 @@ const Header = ({ activeHeading }) => {
             </Link>
           </div>
           {/* search box */}
-          <div className='w-1/3 relative flex items-center justify-center'>
+          <div className='w-[50%] relative'>
             <input
               type='text'
               placeholder='Search Product...'
               value={searchTerm}
               onChange={handleSearchChange}
-              className='p-2.5 w-full pl-3 border-[#5624D0] border-2  placeholder:text-gray-800 rounded-md'
+              className='h-[40px] w-full px-2 border-[#3957db] border-[2px] rounded-md'
             />
             <AiOutlineSearch
               size={30}
-              className='absolute right-2 cursor-pointer'
+              className='absolute right-2 top-1.5 cursor-pointer'
             />
             {searchData && searchData.length !== 0 ? (
               <div className='absolute min-h-[30vh] bg-slate-50 shadow-sm-2 z-[9] p-4'>
@@ -226,13 +226,21 @@ const Header = ({ activeHeading }) => {
             </Link>
           </div>
           <div>
-            <div className='relative mr-5'>
+            <div
+              className='relative mr-[20px]'
+              onClick={() => setOpenCart(true)}
+            >
               <AiOutlineShoppingCart size={30} />
               <span class='absolute flex items-center justify-center -right-1 -top-1 rounded-full bg-[#5624D0] w-5 h-5 p-0 m-0 text-white font-mono text-xs  leading-tight text-center'>
                 {cart && cart.length}
               </span>
             </div>
           </div>
+          {/* cart popup */}
+          {openCart ? <Cart setOpenCart={setOpenCart} /> : null}
+
+          {/* wishlist popup */}
+          {openWishlist ? <Wishlist setOpenWishlist={setOpenWishlist} /> : null}
         </div>
 
         {/* header sidebar */}
@@ -240,13 +248,13 @@ const Header = ({ activeHeading }) => {
           <div
             className={`fixed w-full bg-[#0000005f] z-20 h-full top-0 left-0`}
           >
-            <div className='fixed w-[60%] bg-[#fff] h-screen top-0 left-0 z-10 overflow-y-scroll'>
+            <div className='fixed w-[70%] bg-[#fff] h-screen top-0 left-0 z-10 overflow-y-scroll'>
               <div className='w-full justify-between flex pr-3'>
                 <div>
                   <div className='relative mr-[15px]'>
                     <AiOutlineHeart size={30} className='mt-5 ml-3' />
                     <span class='absolute right-0 top-0 rounded-full bg-[#3bc177] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px]  leading-tight text-center'>
-                      0
+                      {wishlist && wishlist.length}
                     </span>
                   </div>
                 </div>

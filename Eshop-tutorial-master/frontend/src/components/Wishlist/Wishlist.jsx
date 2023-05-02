@@ -26,7 +26,7 @@ const Wishlist = ({ setOpenWishlist }) => {
 
   return (
     <div className='fixed top-0 left-0 w-full bg-[#0000004b] h-screen z-10'>
-      <div className='fixed top-0 right-0 min-h-full w-[25%] bg-white flex flex-col justify-between shadow-sm'>
+      <div className='fixed top-0 right-0 h-full w-[80%] overflow-y-scroll 800px:w-[25%] bg-white flex flex-col justify-between shadow-sm'>
         {wishlist && wishlist.length === 0 ? (
           <div className='w-full h-screen flex items-center justify-center'>
             <div className='flex w-full justify-end pt-5 pr-5 fixed top-3 right-3'>
@@ -82,35 +82,31 @@ const CartSingle = ({ data, removeFromWishlistHandler, addToCartHandler }) => {
   const totalPrice = data.discountPrice * value;
 
   return (
-    <div className='border-b last:border-0 p-4'>
-      <div className='w-full flex flex-col space-y-4'>
-        <div className='relative flex items-center justify-between'>
-          <img
-            src={`${backend_url}${data?.images[0]}`}
-            alt=''
-            className='w-28 h-28 object-contain rounded-md'
-          />
-          <RxCross1
-            className='cursor-pointer absolute top-2 text-xl right-4'
-            onClick={() => removeFromWishlistHandler(data)}
-          />
+    <div className='border-b p-4'>
+      <div className='w-full 800px:flex items-center'>
+        <RxCross1
+          className="cursor-pointer 800px:mb-['unset'] 800px:ml-['unset'] mb-2 ml-2"
+          onClick={() => removeFromWishlistHandler(data)}
+        />
+        <img
+          src={`${backend_url}${data?.images[0]}`}
+          alt=''
+          className='w-[130px] h-min ml-2 mr-2 rounded-[5px]'
+        />
+
+        <div className='pl-[5px]'>
+          <h1>{data.name}</h1>
+          <h4 className='font-[600] pt-3 800px:pt-[3px] text-[17px] text-[#d02222] font-Roboto'>
+            US${totalPrice}
+          </h4>
         </div>
-        <div className='flex items-center justify-between'>
-          <div className='pl-2'>
-            <h1>{data.name}</h1>
-            <h4 className='font-[600] text-lg text-[#d02222] font-Roboto'>
-              {totalPrice}$
-            </h4>
-          </div>
-          <div>
-            <BsCartPlus
-              size={40}
-              className='cursor-pointer border hover:bg-red-200 rounded-full trasnsition ease-in-out duration-200 bg-red-100 p-2'
-              tile='Add to cart'
-              fill='red'
-              onClick={() => addToCartHandler(data)}
-            />
-          </div>
+        <div>
+          <BsCartPlus
+            size={20}
+            className='cursor-pointer'
+            tile='Add to cart'
+            onClick={() => addToCartHandler(data)}
+          />
         </div>
       </div>
     </div>
