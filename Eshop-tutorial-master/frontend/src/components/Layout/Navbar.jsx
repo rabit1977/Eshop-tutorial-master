@@ -8,9 +8,9 @@ const Navbar = ({ active }) => {
     <div className={`md:${styles.noramlFlex}`}>
       {navItems &&
         navItems.map((i, index) => (
-          <div className='flex'>
-            <Link to={i.url} className='mx-2 px-3 xl:mx-3 xl:px-4'>
-              <p
+          <div key={index} className='flex'>
+            <Link  to={i.url} className='mx-2 px-3 xl:mx-3 xl:px-4'>
+              <p 
                 className={`${
                   active === index + 1
                     ? 'text-[#673DE6] md:text-white underline underline-offset-8'
