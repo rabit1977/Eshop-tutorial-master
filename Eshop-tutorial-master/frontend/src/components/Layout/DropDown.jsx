@@ -15,7 +15,7 @@ const DropDown = ({ categoriesData, setDropDown }) => {
         categoriesData.map((i, index) => (
           <div
             key={index}
-            className={`${styles.noramlFlex} hover:bg-gray-200/80`}
+            className={`${styles.noramlFlex} hover:bg-indigo-200/70`}
             onClick={() => submitHandle(i)}
           >
             <img

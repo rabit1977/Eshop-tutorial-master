@@ -1,28 +1,28 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import styles from '../../styles/styles';
-import { categoriesData, productData } from '../../static/data';
 import {
   AiOutlineHeart,
   AiOutlineSearch,
   AiOutlineShoppingCart,
 } from 'react-icons/ai';
+import { BiMenuAltLeft } from 'react-icons/bi';
+import { CgProfile } from 'react-icons/cg';
+import { FaOpencart } from 'react-icons/fa';
 import {
   IoIosArrowDown,
   IoIosArrowForward,
   IoIosHeartEmpty,
   IoIosMenu,
 } from 'react-icons/io';
-import { BiMenuAltLeft } from 'react-icons/bi';
-import { CgProfile } from 'react-icons/cg';
+import { RxCross1 } from 'react-icons/rx';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { backend_url } from '../../server';
+import { categoriesData } from '../../static/data';
+import styles from '../../styles/styles';
+import Wishlist from '../Wishlist/Wishlist';
+import Cart from '../cart/Cart';
 import DropDown from './DropDown';
 import Navbar from './Navbar';
-import { useSelector } from 'react-redux';
-import { backend_url } from '../../server';
-import Cart from '../cart/Cart';
-import Wishlist from '../Wishlist/Wishlist';
-import { RxCross1 } from 'react-icons/rx';
-import { FaOpencart } from 'react-icons/fa';
 
 const Header = ({ activeHeading }) => {
   const { isAuthenticated, user } = useSelector((state) => state.user);
@@ -69,7 +69,7 @@ const Header = ({ activeHeading }) => {
             </Link>
           </div>
           {/* search box */}
-          <div className='w-[50%] relative'>
+          <div className='w-1/2 relative'>
             <input
               type='text'
               placeholder='Search Product...'
@@ -82,18 +82,20 @@ const Header = ({ activeHeading }) => {
               className='absolute right-2 top-1.5 cursor-pointer'
             />
             {searchData && searchData.length !== 0 ? (
-              <div className='absolute min-h-[30vh] bg-slate-50 shadow-sm-2 z-[9] p-4'>
+              <div className='absolute min-h-auto border rounded-b-lg bg-slate-50 shadow-md z-10'>
                 {searchData &&
                   searchData.map((i, index) => {
                     return (
                       <Link to={`/product/${i._id}`}>
-                        <div className='w-full flex items-start-py-3'>
-                          <img
-                            src={`${backend_url}${i.images[0]}`}
-                            alt=''
-                            className='w-[40px] h-[40px] mr-[10px]'
-                          />
-                          <h1>{i.name}</h1>
+                        <div className='hover:bg-indigo-200/70 p-1'>
+                          <div className='w-full flex items-center mx-3 my-1'>
+                            <img
+                              src={`${backend_url}${i.images[0]}`}
+                              alt=''
+                              className='w-12 h-12 mr-[10px]'
+                            />
+                            <h1>{i.name}</h1>
+                          </div>
                         </div>
                       </Link>
                     );
@@ -115,17 +117,17 @@ const Header = ({ activeHeading }) => {
       <div
         className={`${
           active === true ? 'shadow-sm fixed top-0 left-0 z-10' : null
-        } transition hidden 800px:flex items-center justify-between w-full bg-[#673DE6] h-[70px]`}
+        } transition hidden md:flex items-center justify-between w-full bg-[#673DE6] h-16`}
       >
         <div
           className={`${styles.section} relative ${styles.noramlFlex} justify-between`}
         >
           {/* categories */}
           <div onClick={() => setDropDown(!dropDown)}>
-            <div className='relative  h-14 mt-3.5 w-64 hidden lg:block'>
+            <div className='relative  h-12 mt-3.5 w-64 hidden lg:block'>
               <IoIosMenu size={30} className='absolute top-3 left-2' />
               <button
-                className={`h-[100%] w-full flex justify-between items-center pl-12 bg-white font-sans text-lg font-[500] select-none rounded-t-md`}
+                className={`h-full w-full flex justify-between items-center pl-12 bg-white font-sans text-lg font-normal select-none rounded-t-md`}
               >
                 All Categories
               </button>

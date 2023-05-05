@@ -3,7 +3,7 @@ const styles = {
   heading:
     'text-[27px] text-center md:text-start font-[600] font-Roboto pb-[20px]',
   section: 'w-11/12 mx-auto',
-  productTitle: 'text-[25px] font-[600] font-Roboto text-[#333]',
+  productTitle: 'text-4xl font-semibold font-Roboto text-[#333]',
   productDiscountPrice: 'font-bold text-[18px] text-[#333] font-Roboto',
   price: 'font-[500] text-[16px] text-[#673DE6] pl-3 mt-[-4px] line-through',
   shop_name: 'pt-3 text-medium underline underline-offset-4 font-semibold text-[#673DE6] pb-3',
