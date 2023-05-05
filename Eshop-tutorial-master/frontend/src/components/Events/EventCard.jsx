@@ -29,9 +29,9 @@ const EventCard = ({ active, data }) => {
     <div
       className={`w-full block bg-white rounded-lg ${
         active ? 'unset' : 'mb-12'
-      } lg:flex border shadow-md gap-6`}
+      } lg:flex overflow-hidden shadow-md gap-6`}
     >
-      <div className='w-full lg:-w-[50%] m-auto'>
+      <div className='w-full lg:-w-1/2 m-auto'>
         <img src={`${backend_url}${data?.images[0]}`} alt='' />
       </div>
       <div className='w-full lg:1/2 flex flex-col justify-center space-y-3 p-8 md:p-6 lg:p-4'>

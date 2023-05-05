@@ -62,8 +62,8 @@ const Header = ({ activeHeading }) => {
   return (
     <>
       <div className={`${styles.section}`}>
-        <div className='hidden 800px:h-[50px] 800px:my-[20px] 800px:flex items-center justify-between'>
-          <div>
+        <div className='hidden md:h-16 md:my-[20px] md:flex items-center justify-between'>
+          <div className='hover:scale-x-[103%] transition easy-in-out duration-150'>
             <Link to='/'>
               <img src='Images/Logo.png' alt='' className='w-44' />
             </Link>
@@ -108,7 +108,10 @@ const Header = ({ activeHeading }) => {
             <Link to={`${isSeller ? '/dashboard' : '/shop-create'}`}>
               <h1 className='text-[#fff] flex items-center'>
                 {isSeller ? 'Go Dashboard' : 'Become Seller'}{' '}
-                <IoIosArrowForward className='ml-1' />
+                <IoIosArrowForward
+                  size={20}
+                  className=' transition ease-in duration-300  hover:pl-2 w-8 hover:text-lg'
+                />
               </h1>
             </Link>
           </div>
@@ -125,7 +128,7 @@ const Header = ({ activeHeading }) => {
           {/* categories */}
           <div onClick={() => setDropDown(!dropDown)}>
             <div className='relative  h-12 mt-3.5 w-64 hidden lg:block'>
-              <IoIosMenu size={30} className='absolute top-3 left-2' />
+              <IoIosMenu size={30} className='absolute  top-3 left-2' />
               <button
                 className={`h-full w-full flex justify-between items-center pl-12 bg-white font-sans text-lg font-normal select-none rounded-t-md`}
               >
@@ -152,7 +155,7 @@ const Header = ({ activeHeading }) => {
           <div className='flex flex-1 justify-end lg:flex-none'>
             <div className={`${styles.noramlFlex}`}>
               <div
-                className='relative cursor-pointer mr-[15px]'
+                className='relative cursor-pointer mr-[15px] hover:opacity-90'
                 onClick={() => setOpenWishlist(true)}
               >
                 <IoIosHeartEmpty size={30} color='rgb(255 255 255 / 83%)' />
@@ -164,7 +167,7 @@ const Header = ({ activeHeading }) => {
 
             <div className={`${styles.noramlFlex}`}>
               <div
-                className='relative cursor-pointer mr-[15px]'
+                className='relative cursor-pointer mr-[15px] hover:opacity-90'
                 onClick={() => setOpenCart(true)}
               >
                 <FaOpencart size={30} color='rgb(255 255 255 / 83%)' />
@@ -211,7 +214,7 @@ const Header = ({ activeHeading }) => {
       w-full bg-[#fff] p-3 border-b shadow-lg md:hidden`}
       >
         <div className='w-full flex items-center justify-between'>
-          <div>
+          <div className='bg-gray-100/90 hover:bg-gray-200/80 transition duration-200 ease-in-out p-1 rounded-full'>
             <BiMenuAltLeft
               size={40}
               className=''
@@ -229,7 +232,7 @@ const Header = ({ activeHeading }) => {
           </div>
           <div>
             <div
-              className='relative mr-[20px]'
+              className='relative mr-5 bg-gray-100/90 hover:bg-gray-200/80 transition duration-200 ease-in-out p-2 rounded-full'
               onClick={() => setOpenCart(true)}
             >
               <AiOutlineShoppingCart size={30} />

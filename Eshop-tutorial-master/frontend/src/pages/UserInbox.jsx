@@ -284,7 +284,7 @@ const MessageList = ({
     <div
       className={`w-full flex p-3 px-3 ${
         active === index ? 'bg-[#00000010]' : 'bg-transparent'
-      }  cursor-pointer`}
+      }  cursor-pointer hover:bg-[#555]/10 transition duration-100 ease-in-out`}
       onClick={(e) =>
         setActive(index) ||
         handleClick(data._id) ||
@@ -331,9 +331,9 @@ const SellerInbox = ({
   handleImageUpload,
 }) => {
   return (
-    <div className='w-[full] min-h-full flex flex-col justify-between p-5'>
+    <div className='w-[full] min-h-full flex flex-col justify-between p-5 '>
       {/* message header */}
-      <div className='w-full flex p-3 items-center justify-between bg-slate-200'>
+      <div className='w-full flex p-3 items-center justify-between bg-slate-200  '>
         <div className='flex'>
           <img
             src={`${backend_url}${userData?.avatar}`}
@@ -353,7 +353,7 @@ const SellerInbox = ({
       </div>
 
       {/* messages */}
-      <div className='px-3 h-[75vh] py-3 overflow-y-scroll'>
+      <div className='px-3 h-[75vh] py-3 overflow-y-auto'>
         {messages &&
           messages.map((item, index) => (
             <div
@@ -373,6 +373,7 @@ const SellerInbox = ({
                 <img
                   src={`${backend_url}${item.images}`}
                   className='w-[300px] h-[300px] object-cover rounded-[10px] ml-2 mb-2'
+                  alt=''
                 />
               )}
               {item.text !== '' && (
@@ -397,37 +398,38 @@ const SellerInbox = ({
       {/* send message input */}
       <form
         aria-required={true}
-        className='p-3 relative w-full flex justify-between items-center'
+        className='p-3 relative w-full space-x-3 flex justify-between items-center'
         onSubmit={sendMessageHandler}
       >
-        <div className='w-[30px]'>
-          <input
-            type='file'
-            name=''
-            id='image'
-            className='hidden'
-            onChange={handleImageUpload}
-          />
-          <label htmlFor='image'>
-            <TfiGallery className='cursor-pointer' size={20} />
-          </label>
-        </div>
-        <div className='w-full'>
-          <input
-            type='text'
-            required
-            placeholder='Enter your message...'
-            value={newMessage}
-            onChange={(e) => setNewMessage(e.target.value)}
-            className={`${styles.input}`}
-          />
-          <input type='submit' value='Send' className='hidden' id='send' />
-          <label htmlFor='send'>
-            <AiOutlineSend
-              size={20}
-              className='absolute right-4 top-5 cursor-pointer'
+        <div className='w-full flex items-center space-between gap-4'>
+          <div className='w-[40px]'>
+            <input
+              type='file'
+              name=''
+              id='image'
+              className='hidden'
+              onChange={handleImageUpload}
             />
-          </label>
+            <label htmlFor='image'>
+              <TfiGallery className='cursor-pointer' size={40} />
+            </label>
+          </div>
+          <div className='w-full bg-white flex items-center space-betweeen px-4'>
+            <input
+              type='text'
+              required
+              placeholder='Enter your message...'
+              value={newMessage}
+              onChange={(e) => setNewMessage(e.target.value)}
+              className={`h-14 bg-transparent flex flex-1`}
+            />
+            <div>
+              <input type='submit' value='Send' className='hidden' id='send' />
+              <label htmlFor='send'>
+                <AiOutlineSend size={30} className='cursor-pointer' />
+              </label>
+            </div>
+          </div>
         </div>
       </form>
     </div>

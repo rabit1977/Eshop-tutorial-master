@@ -26,13 +26,13 @@ const Wishlist = ({ setOpenWishlist }) => {
 
   return (
     <div className='fixed top-0 left-0 w-full bg-[#0000004b] h-screen z-10'>
-      <div className='fixed top-0 right-0 h-full w-[80%] overflow-y-scroll 800px:w-[25%] bg-white flex flex-col justify-between shadow-sm'>
+      <div className='fixed top-0 right-0 h-full overflow-y-auto w-1/6 min-w-max bg-white flex flex-col justify-between shadow-sm'>
         {wishlist && wishlist.length === 0 ? (
           <div className='w-full h-screen flex items-center justify-center'>
             <div className='flex w-full justify-end pt-5 pr-5 fixed top-3 right-3'>
               <RxCross1
                 size={25}
-                className='cursor-pointer'
+                className='cursor-pointer '
                 onClick={() => setOpenWishlist(false)}
               />
             </div>
@@ -82,10 +82,11 @@ const CartSingle = ({ data, removeFromWishlistHandler, addToCartHandler }) => {
   const totalPrice = data.discountPrice * value;
 
   return (
-    <div className='border-b p-4'>
-      <div className='w-full 800px:flex items-center'>
+    <div className='relative flex items-center border-b p-4 h-44'>
+      <div className='w-full flex items-center pr-6'>
         <RxCross1
-          className="cursor-pointer 800px:mb-['unset'] 800px:ml-['unset'] mb-2 ml-2"
+          size={30}
+          className="cursor-pointer md:mb-['unset'] md:ml-['unset'] mb-2 ml-2 absolute right-4 top-4 bg-slate-200 p-1 rounded-full"
           onClick={() => removeFromWishlistHandler(data)}
         />
         <img
@@ -96,14 +97,14 @@ const CartSingle = ({ data, removeFromWishlistHandler, addToCartHandler }) => {
 
         <div className='pl-[5px]'>
           <h1>{data.name}</h1>
-          <h4 className='font-[600] pt-3 800px:pt-[3px] text-[17px] text-[#d02222] font-Roboto'>
+          <h4 className='font-[600] pt-3 md:pt-[3px] text-[17px] text-[#d02222] font-Roboto'>
             US${totalPrice}
           </h4>
         </div>
         <div>
           <BsCartPlus
             size={20}
-            className='cursor-pointer'
+            className='cursor-pointer absolute right-4 bottom-4'
             tile='Add to cart'
             onClick={() => addToCartHandler(data)}
           />

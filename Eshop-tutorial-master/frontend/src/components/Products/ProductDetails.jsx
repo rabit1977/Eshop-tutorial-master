@@ -114,10 +114,10 @@ const ProductDetails = ({ data }) => {
   return (
     <div className='bg-white'>
       {data ? (
-        <div className={`${styles.section} w-[90%] 800px:w-[80%]`}>
+        <div className={`${styles.section} w-[90%] md:w-[80%]`}>
           <div className='w-full py-5'>
-            <div className='block w-full 800px:flex'>
-              <div className='w-full 800px:w-[50%]'>
+            <div className='block w-full md:flex'>
+              <div className='w-full md:w-[50%]'>
                 <img
                   src={`${backend_url}${data && data.images[select]}`}
                   alt=''
@@ -146,7 +146,7 @@ const ProductDetails = ({ data }) => {
                   ></div>
                 </div>
               </div>
-              <div className='w-full 800px:w-[50%] pt-5'>
+              <div className='w-full md:w-[50%] pt-5'>
                 <h1 className={`${styles.productTitle}`}>{data.name}</h1>
                 <p>{data.description}</p>
                 <div className='flex pt-3'>
@@ -257,12 +257,12 @@ const ProductDetailsInfo = ({
   const [active, setActive] = useState(1);
 
   return (
-    <div className='bg-[#f5f6fb] px-3 800px:px-10 py-2 rounded'>
+    <div className='bg-[#f5f6fb] px-3 md:px-10 py-2 rounded'>
       <div className='w-full flex justify-between border-b pt-10 pb-2'>
         <div className='relative'>
           <h5
             className={
-              'text-[#000] text-[18px] px-1 leading-5 font-[600] cursor-pointer 800px:text-[20px]'
+              'text-[#000] text-[18px] px-1 leading-5 font-[600] cursor-pointer md:text-[20px]'
             }
             onClick={() => setActive(1)}
           >
@@ -275,7 +275,7 @@ const ProductDetailsInfo = ({
         <div className='relative'>
           <h5
             className={
-              'text-[#000] text-[18px] px-1 leading-5 font-[600] cursor-pointer 800px:text-[20px]'
+              'text-[#000] text-[18px] px-1 leading-5 font-[600] cursor-pointer md:text-[20px]'
             }
             onClick={() => setActive(2)}
           >
@@ -288,7 +288,7 @@ const ProductDetailsInfo = ({
         <div className='relative'>
           <h5
             className={
-              'text-[#000] text-[18px] px-1 leading-5 font-[600] cursor-pointer 800px:text-[20px]'
+              'text-[#000] text-[18px] px-1 leading-5 font-[600] cursor-pointer md:text-[20px]'
             }
             onClick={() => setActive(3)}
           >
@@ -336,8 +336,8 @@ const ProductDetailsInfo = ({
       ) : null}
 
       {active === 3 && (
-        <div className='w-full block 800px:flex p-5'>
-          <div className='w-full 800px:w-[50%]'>
+        <div className='w-full block md:flex p-5'>
+          <div className='w-full md:w-[50%]'>
             <Link to={`/shop/preview/${data.shop._id}`}>
               <div className='flex items-center'>
                 <img
@@ -355,7 +355,7 @@ const ProductDetailsInfo = ({
             </Link>
             <p className='pt-2'>{data.shop.description}</p>
           </div>
-          <div className='w-full 800px:w-[50%] mt-5 800px:mt-0 800px:flex flex-col items-end'>
+          <div className='w-full md:w-[50%] mt-5 md:mt-0 md:flex flex-col items-end'>
             <div className='text-left'>
               <h5 className='font-[600]'>
                 Joined on:{' '}

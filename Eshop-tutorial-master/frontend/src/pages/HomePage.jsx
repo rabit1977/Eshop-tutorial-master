@@ -12,12 +12,14 @@ const HomePage = () => {
   return (
     <div>
       <Header activeHeading={1} />
-      <Hero />
-      <Categories />
-      <BestDeals />
-      <Events />
-      <FeaturedProduct />
-      <Sponsored />
+      <div className='2xl:container mx-auto'>
+        <Hero />
+        <Categories />
+        <BestDeals />
+        <Events />
+        <FeaturedProduct />
+        <Sponsored />
+      </div>
       <Footer />
     </div>
   );

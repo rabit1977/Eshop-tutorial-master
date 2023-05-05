@@ -28,7 +28,7 @@ const Cart = ({ setOpenCart }) => {
 
   return (
     <div className='fixed top-0 left-0 w-full bg-[#0000004b] h-screen z-10'>
-      <div className="fixed top-0 right-0 h-full w-[80%] 800px:w-[25%] bg-white flex flex-col overflow-y-scroll justify-between shadow-sm">
+      <div className='fixed top-0 right-0 h-full w-1/6 min-w-max bg-white flex flex-col overflow-y-auto justify-between shadow-sm'>
         {cart && cart.length === 0 ? (
           <div className='w-full h-screen flex items-center justify-center'>
             <div className='flex w-full justify-end pt-5 pr-5 fixed top-3 right-4'>
@@ -142,8 +142,7 @@ const CartSingle = ({ data, quantityChangeHandler, removeFromCartHandler }) => {
                 </small>
                 <h4 className='font-[600] text-base text-[#d02222] font-Roboto'>
                   {totalPrice}
-                  <small>$</small>-
-                  <small>(usd)</small>
+                  <small>$</small>-<small>(usd)</small>
                 </h4>
               </div>
             </div>
