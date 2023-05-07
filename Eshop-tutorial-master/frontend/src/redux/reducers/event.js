@@ -1,4 +1,4 @@
-import { createReducer } from "@reduxjs/toolkit";
+import { createReducer } from '@reduxjs/toolkit';
 
 const initialState = {
   isLoading: true,
@@ -33,19 +33,19 @@ export const eventReducer = createReducer(initialState, {
   },
 
   // delete event of a shop
-  deleteeventRequest: (state) => {
+  deleteEventRequest: (state) => {
     state.isLoading = true;
   },
-  deleteeventSuccess: (state, action) => {
+  deleteEventSuccess: (state, action) => {
     state.isLoading = false;
     state.message = action.payload;
   },
-  deleteeventFailed: (state, action) => {
+  deleteEventFailed: (state, action) => {
     state.isLoading = false;
     state.error = action.payload;
   },
 
-  // get all events 
+  // get all events
   getAlleventsRequest: (state) => {
     state.isLoading = true;
   },

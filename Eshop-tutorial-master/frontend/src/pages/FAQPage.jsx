@@ -30,7 +30,7 @@ const Faq = () => {
       <div className="mx-auto space-y-4">
         {/* single Faq */}
 
-        <div className="border-b border-gray-200 pb-4">
+        <div className="border-b  border-gray-200 pb-4">
           <button
             className="flex items-center justify-between w-full"
             onClick={() => toggleTab(2)}

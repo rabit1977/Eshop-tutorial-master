@@ -15,7 +15,7 @@ import styles from '../../styles/styles';
 
 const Footer = () => {
   return (
-    <div className='bg-[#1C1D1F] text-white'>
+    <div className='bg-[#1C1D1F] text-white mt-8'>
       <div className='md:flex md:justify-between md:items-center sm:px-12 px-4 bg-[#673DE6] py-7'>
         <h1 className='text-3xl lg:text-5xl md:mb-0 mb-6 md:text-left text-center lg:leading-normal font-semibold'>
           Subscribe here

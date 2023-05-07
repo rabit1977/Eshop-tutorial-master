@@ -10,7 +10,7 @@ import Footer from '../components/Layout/Footer';
 
 const HomePage = () => {
   return (
-    <div>
+    <div className=''>
       <Header activeHeading={1} />
       <div className='2xl:container mx-auto'>
         <Hero />

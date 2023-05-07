@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { BsFillBagFill } from 'react-icons/bs';
-import { Link, useParams } from 'react-router-dom';
+import { RxCross1 } from 'react-icons/rx';
 import { useDispatch, useSelector } from 'react-redux';
-import styles from '../styles/styles';
+import { Link, useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { getAllOrdersOfUser } from '../redux/actions/order';
 import { backend_url, server } from '../server';
-import { RxCross1 } from 'react-icons/rx';
-import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
-import axios from 'axios';
-import { toast } from 'react-toastify';
+import styles from '../styles/styles';
 
 const UserOrderDetails = () => {
   const { orders } = useSelector((state) => state.order);
