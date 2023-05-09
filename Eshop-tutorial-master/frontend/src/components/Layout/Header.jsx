@@ -65,7 +65,7 @@ const Header = ({ activeHeading }) => {
         <div className='hidden md:h-16 md:my-[20px] md:flex items-center justify-between'>
           <div className='hover:scale-x-[103%] transition easy-in-out duration-150'>
             <Link to='/'>
-              <img src='Images/Logo.png' alt='' className='w-44' />
+              <img src='/Images/Logo.png' alt='' className='w-44' />
             </Link>
           </div>
           {/* search box */}

@@ -6,7 +6,8 @@ const styles = {
   productTitle: 'text-4xl font-semibold font-Roboto text-[#333]',
   productDiscountPrice: 'font-bold text-[18px] text-[#333] font-Roboto',
   price: 'font-[500] text-[16px] text-[#673DE6] pl-3 mt-[-4px] line-through',
-  shop_name: 'pt-3 text-medium underline underline-offset-4 font-semibold text-[#673DE6] pb-3',
+  shop_name:
+    'pt-3 text-medium underline underline-offset-4 font-semibold text-[#673DE6] pb-3',
   active_indicator: 'absolute bottom-[-27%] left-0 h-[3px] w-full bg-[crimson]',
   button:
     'w-auto bg-[#673DE6] px-6 py-2.5 my-3 flex items-center justify-center rounded-full text-lg text-semibold hover:bg-[#673DE6]/90 cursor-pointer',
