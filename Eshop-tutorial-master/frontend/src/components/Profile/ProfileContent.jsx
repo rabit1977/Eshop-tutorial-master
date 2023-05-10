@@ -481,7 +481,7 @@ const ChangePassword = () => {
   };
   return (
     <div className='w-full px-5'>
-      <h1 className='block text-[25px] text-center font-[600] text-[#000000ba] pb-2'>
+      <h1 className='block text-3xl text-center font-semibold text-indigo-600 pb-2'>
         Change Password
       </h1>
       <div className='w-full'>
@@ -490,17 +490,17 @@ const ChangePassword = () => {
           onSubmit={passwordChangeHandler}
           className='flex flex-col items-center'
         >
-          <div className=' w-[100%] md:w-[50%] mt-5'>
+          <div className=' w-full md:w-1/2 mt-5'>
             <label className='block pb-2'>Enter your old password</label>
             <input
               type='password'
-              className={`${styles.input} !w-[95%] mb-4 md:mb-0`}
+              className={`${styles.input} !w-[calc(100%-5%)] mb-4 md:mb-0`}
               required
               value={oldPassword}
               onChange={(e) => setOldPassword(e.target.value)}
             />
           </div>
-          <div className=' w-[100%] md:w-[50%] mt-2'>
+          <div className=' w-full md:w-1/2 mt-2'>
             <label className='block pb-2'>Enter your new password</label>
             <input
               type='password'
@@ -510,7 +510,7 @@ const ChangePassword = () => {
               onChange={(e) => setNewPassword(e.target.value)}
             />
           </div>
-          <div className=' w-[100%] md:w-[50%] mt-2'>
+          <div className=' w-full md:w-1/2 mt-2'>
             <label className='block pb-2'>Enter your confirm password</label>
             <input
               type='password'
@@ -520,9 +520,9 @@ const ChangePassword = () => {
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
             <input
-              className={`w-[95%] h-[40px] border border-[#3a24db] text-center text-[#3a24db] rounded-[3px] mt-8 cursor-pointer`}
+              className={`w-[calc(100%-5%)] h-10 border border-[#3a24db] text-center text-lg font-medium tracking-wide text-[#3a24db] rounded-[3px] mt-8 cursor-pointer hover:bg-indigo-600 hover:text-white transition ease-in-out duration-200`}
               required
-              value='Update'
+              value='Submit'
               type='submit'
             />
           </div>
