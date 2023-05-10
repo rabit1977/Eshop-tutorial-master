@@ -3,13 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --primary: #e7e9eb;
-  --secondary: rgb(125, 80, 237);
-  --hoverSecondary: rgb(100, 33, 234);
+  --primary: #fafcf0;
+  /* --secondary: rgb(125, 80, 237); */
+  --secondary: #dadce0;
+  --hoverSecondary: #80868b;
 }
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
-  width: 17px;
+  width: 16px;
 }
 
 *::-webkit-scrollbar-track {
