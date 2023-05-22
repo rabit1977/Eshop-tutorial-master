@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { categoriesData } from '../../static/data';
 import { toast } from 'react-toastify';
-import { createevent } from '../../redux/actions/event';
+import { createEvent } from '../../redux/actions/event';
 
 const CreateEvent = () => {
   const { seller } = useSelector((state) => state.seller);
@@ -83,7 +83,7 @@ const CreateEvent = () => {
     newForm.append('shopId', seller._id);
     newForm.append('start_Date', startDate.toISOString());
     newForm.append('Finish_Date', endDate.toISOString());
-    dispatch(createevent(newForm));
+    dispatch(createEvent(newForm));
   };
 
   return (

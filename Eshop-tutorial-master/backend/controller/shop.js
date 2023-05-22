@@ -151,6 +151,7 @@ router.get(
   catchAsyncErrors(async (req, res, next) => {
     try {
       const seller = await Shop.findById(req.seller._id);
+      // console.log(seller);
 
       if (!seller) {
         return next(new ErrorHandler("User doesn't exists", 400));
