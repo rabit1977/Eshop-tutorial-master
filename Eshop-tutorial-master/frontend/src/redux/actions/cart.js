@@ -1,3 +1,24 @@
+// import { createAsyncThunk } from "@reduxjs/toolkit";
+
+// // add to cart
+// export const addTocart = createAsyncThunk(
+//   "cart/addToCart",
+//   async (data, { getState }) => {
+//     localStorage.setItem("cartItems", JSON.stringify(getState().cart.cart));
+//     return data;
+//   }
+// );
+
+// // remove from cart
+// export const removeFromCart = createAsyncThunk(
+//   "cart/removeFromCart",
+//   async (data, { getState }) => {
+//     localStorage.setItem("cartItems", JSON.stringify(getState().cart.cart));
+//     return data._id;
+//   }
+// );
+
+
 // add to cart
 export const addTocart = (data) => async (dispatch, getState) => {
   dispatch({

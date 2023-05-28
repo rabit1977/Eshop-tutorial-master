@@ -1,66 +1,39 @@
-// Import the createSlice function from Redux Toolkit
-import { createSlice } from '@reduxjs/toolkit';
+import { createReducer } from "@reduxjs/toolkit";
 
-// Define the initial state of the seller
 const initialState = {
   isLoading: true,
 };
 
-// Create a slice of the state for the seller
-const sellerSlice = createSlice({
-  // Give the slice a name
-  name: 'seller',
-  // Pass the initial state
-  initialState,
-  // Define the reducers for the slice
-  reducers: {
-    // Load a seller
-    LoadSellerRequest: (state) => {
+export const sellerReducer = createReducer(initialState, (builder) => {
+  builder
+    .addCase("LoadSellerRequest", (state) => {
       state.isLoading = true;
-    },
-    LoadSellerSuccess: (state, action) => {
+    })
+    .addCase("LoadSellerSuccess", (state, action) => {
       state.isSeller = true;
       state.isLoading = false;
       state.seller = action.payload;
-    },
-    LoadSellerFail: (state, action) => {
+    })
+    .addCase("LoadSellerFail", (state, action) => {
       state.isLoading = false;
       state.error = action.payload;
       state.isSeller = false;
-    },
-
-    // Get all sellers for admin
-    getAllSellersRequest: (state) => {
+    })
+    .addCase("getAllSellersRequest", (state) => {
       state.isLoading = true;
-    },
-    getAllSellersSuccess: (state, action) => {
+    })
+    .addCase("getAllSellersSuccess", (state, action) => {
       state.isLoading = false;
       state.sellers = action.payload;
-    },
-    getAllSellerFailed: (state, action) => {
+    })
+    .addCase("getAllSellerFailed", (state, action) => {
       state.isLoading = false;
       state.error = action.payload;
-    },
-
-    // Clear errors
-    clearErrors: (state) => {
-      state.error = null;
-    },
-  },
+    })
+    .addDefaultCase((state) => {
+      // do nothing
+    });
 });
-
-// Export the reducer and action creators from the slice
-export const {
-  LoadSellerRequest,
-  LoadSellerSuccess,
-  LoadSellerFail,
-  getAllSellersRequest,
-  getAllSellersSuccess,
-  getAllSellerFailed,
-  clearErrors,
-} = sellerSlice.actions;
-
-export const sellerReducer = sellerSlice.reducer;
 
 
 
